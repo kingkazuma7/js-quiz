@@ -21,33 +21,34 @@ const quiz = [
   },
 ];
 
+// 変数
 const $window = window;
 const $doc = document;
 const $qustion = $doc.getElementById("js-question");
 const $buttons = $doc.querySelectorAll(".btn");
-
 const $quizLength = quiz.length; // 3
 let quizIndex = 0;
-let score = 0;
-
-// 4つの質問
-const $button = document.getElementsByTagName("button");
-// ボタンのlength
-const $btnLength = $button.length;
 
 // 定数の文字列をHTMLに反映
 const setupQuiz = () => {
   // クイズ文上書き
   $qustion.textContent = quiz[quizIndex].question;
-  let btnIndex = 0;
-  while (btnIndex < $btnLength) {
-    $buttons[btnIndex].textContent = quiz[quizIndex].answers[btnIndex];
-    btnIndex++;
+
+  const $setBtnLen = $buttons.length; // 4
+  let $btnIndex = 0;
+  // console.log();
+
+  // 0~4の間
+  while ($btnIndex < $setBtnLen) {
+    $buttons[$btnIndex].textContent = quiz[quizIndex].answers[$btnIndex];
+    $btnIndex++;
   }
 };
 
 // 対象をクリックしたら
 const clickHandler = (e) => {
+  let score = 0;
+
   if (quiz[quizIndex].correct === e.target.textContent) {
     window.alert("正解");
     score++;
@@ -67,14 +68,17 @@ const clickHandler = (e) => {
     );
   }
 };
-
 setupQuiz();
 
 // ボタンクリックしたら正誤判定
-let $handlerIndex = 0;
-while ($handlerIndex < $btnLength) {
-  $buttons[$handlerIndex].addEventListener("click", (e) => {
-    clickHandler(e);
-  });
-  $handlerIndex++; //1~4
-}
+const judQuze = () => {
+  let $answerIndex = 0;
+  const $answerLength = $buttons.length;
+  while ($answerIndex < $answerLength) {
+    $buttons[$answerIndex].addEventListener("click", (e) => {
+      clickHandler(e);
+    });
+    $answerIndex++; //1~4
+  }
+};
+judQuze();
