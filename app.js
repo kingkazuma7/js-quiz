@@ -71,6 +71,21 @@ const clickHandler = (e) => {
       "終了！あなたの正解数は" + score + "/" + $quizLength + "です！"
     );
     endShare.style.display = "block";
+
+    let resultText = document.querySelector(".result");
+    if (score === 3) {
+      resultText.innerHTML = "3問正解";
+      console.log("3問正解");
+    } else if (score === 2) {
+      resultText.innerHTML = "2問正解";
+      console.log("2問正解");
+    } else if (score === 1) {
+      resultText.innerHTML = "1問正解";
+      console.log("1問正解");
+    } else {
+      resultText.innerHTML = "全問不正解";
+      console.log("全問不正解");
+    }
   }
 };
 setupQuiz();
