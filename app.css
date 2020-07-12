@@ -1,0 +1,55 @@
+/* reset */
+ul,
+ol {
+  list-style: none;
+}
+
+dl,
+dt,
+dd,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* btn */
+.list-button {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.list-button li {
+  margin-right: 20px;
+}
+
+.list-button li:last-of-type {
+  margin-right: 0;
+}
+
+.list-button li a {
+  border: 1px solid;
+  padding: 10px;
+  transition: .05s;
+}
+
+.list-button li a:hover {
+  text-decoration: none;
+  color: #007bff;
+  opacity: .7;
+}
+
+.end-share {
+  margin-top: 30px;
+}
