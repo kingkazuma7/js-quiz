@@ -19,3 +19,6 @@ https://www.youtube.com/watch?v=fAluwAmHrws&t=1270s
 - 表示するテキストも問題を解けた数によって出し分ける(ミニマム)
 - 全問解き終わったら花びらを散らす
 - twitter でシェアできるようにする
+  - endShare ブロック初期状態は js で非表示
+  - 問題がなくなったら js で表示
+  - https://itsakura.com/javascript-display
