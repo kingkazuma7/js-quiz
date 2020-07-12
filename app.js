@@ -29,6 +29,10 @@ const $buttons = $doc.querySelectorAll(".btn");
 const $quizLength = quiz.length; // 3
 let quizIndex = 0;
 
+// シェアボタン
+const endShare = document.querySelector(".end-share");
+endShare.style.display = "none";
+
 // 定数の文字列をHTMLに反映
 const setupQuiz = () => {
   // クイズ文上書き
@@ -66,6 +70,7 @@ const clickHandler = (e) => {
     window.alert(
       "終了！あなたの正解数は" + score + "/" + $quizLength + "です！"
     );
+    endShare.style.display = "block";
   }
 };
 setupQuiz();
