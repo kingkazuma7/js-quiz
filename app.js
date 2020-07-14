@@ -1,23 +1,23 @@
 const quiz = [
   {
-    question: "日本でもっとも人気の総合格闘技団体は？",
-    answers: ["RIZIN", "K-1", "RISE", "one championship"],
-    correct: "RIZIN",
+    question: "RIZINの社長の名前は？",
+    answers: ["榊原信行", "坂城原信雄", "榊原健三", "榊原辰徳"],
+    correct: "榊原信行",
   },
   {
-    question: "糸井重里が企画に関わった、任天堂の看板ゲームといえば？",
+    question: "RIZINの設立日はいつ？",
+    answers: ["1970年", "1998年", "2003年", "2015年"],
+    correct: "2015年",
+  },
+  {
+    question: "RIZIN FIGHTING FEDERATION、略してRIZIN FFは何の略？",
     answers: [
-      "MOTHER2",
-      "スーパーマリオブラザーズ3",
-      "スーパードンキーコング",
-      "星のカービィ",
+      "ライジン・ファイナル・フラストレーション",
+      "ライジン・ファイナル・フランソワ",
+      "ライジン・ファイティング・ファンデーション",
+      "ライジン・ファイティング・フェデレーション",
     ],
-    correct: "MOTHER2",
-  },
-  {
-    question: "ファイナルファンタジーⅣの主人公の名前は？",
-    answers: ["フリオニール", "クラウド", "ティーダ", "セシル"],
-    correct: "セシル",
+    correct: "ライジン・ファイティング・フェデレーション",
   },
 ];
 
@@ -51,15 +51,18 @@ const setupQuiz = () => {
   }
 };
 
-// 対象をクリックしたら
+/* 対象をクリックしたら
+ ** juge = clickHandler
+ ** scoreが加算されない
+ */
 const clickHandler = (e) => {
   let score = 0;
 
   if (quiz[quizIndex].correct === e.target.textContent) {
-    window.alert("正解");
+    $window.alert("正解");
     score++;
   } else {
-    window.alert("不正解");
+    $window.alert("不正解");
   }
 
   quizIndex++;
@@ -67,11 +70,10 @@ const clickHandler = (e) => {
   if (quizIndex < $quizLength) {
     // 問題があったとき
     setupQuiz();
+    console.log(score);
   } else {
     // 問題がなかったとき
-    window.alert(
-      "終了！あなたの正解数は" + score + "/" + $quizLength + "です！"
-    );
+    $window.alert(`終了！あなたの正解数は${score}/${$quizLength}です！`);
     endShare.style.display = "block";
     resultImg.style.display = "block";
 
