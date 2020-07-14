@@ -29,8 +29,11 @@ const $buttons = $doc.querySelectorAll(".btn");
 const $quizLength = quiz.length; // 3
 let quizIndex = 0;
 
-// シェアボタン
+// 結果
 const endShare = document.querySelector(".end-share");
+const resultImg = document.querySelector(".result-img");
+resultImg.setAttribute("src", "./src/img/takada02.jpg");
+resultImg.style.display = "none";
 endShare.style.display = "none";
 
 // 定数の文字列をHTMLに反映
@@ -40,7 +43,6 @@ const setupQuiz = () => {
 
   const $setBtnLen = $buttons.length; // 4
   let $btnIndex = 0;
-  // console.log();
 
   // 0~4の間
   while ($btnIndex < $setBtnLen) {
@@ -71,20 +73,21 @@ const clickHandler = (e) => {
       "終了！あなたの正解数は" + score + "/" + $quizLength + "です！"
     );
     endShare.style.display = "block";
+    resultImg.style.display = "block";
 
     let resultText = document.querySelector(".result");
     if (score === 3) {
       resultText.innerHTML = "3問正解";
-      console.log("3問正解");
+      resultImg.setAttribute("src", "./src/img/takada02.jpg");
     } else if (score === 2) {
       resultText.innerHTML = "2問正解";
-      console.log("2問正解");
+      resultImg.setAttribute("src", "./src/img/takada04.jpg");
     } else if (score === 1) {
       resultText.innerHTML = "1問正解";
-      console.log("1問正解");
+      resultImg.setAttribute("src", "./src/img/takada03.jpg");
     } else {
       resultText.innerHTML = "全問不正解";
-      console.log("全問不正解");
+      resultImg.setAttribute("src", "./src/img/takada01.jpg");
     }
   }
 };
