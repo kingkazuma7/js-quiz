@@ -1,8 +1,13 @@
 ## 参考
 
 【JavaScript 入門】基礎文法だけでクイズゲームのアプリを開発！
+
+- youtube  
 https://www.youtube.com/watch?v=fAluwAmHrws&t=1270s
 1.00
+
+- GitHub code  
+https://github.com/seito-developer/js-quiz-apps
 
 ### 概要
 
